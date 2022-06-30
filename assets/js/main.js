@@ -246,7 +246,7 @@ var nameError = document.getElementById('name-error')
 var phoneError = document.getElementById('phone-error') 
 var emailError = document.getElementById('email-error')
 var messageError = document.getElementById('message-error')
-
+var submitError= document.getElementById('submit-error')
 function validateName(){
   var name=document.getElementById('name').value
 
@@ -312,4 +312,13 @@ function validateMessage(){
   messageError.innerHTML= ' '
   return true
 
+}
+
+function validateForm(){
+if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+  submitError.style.display='block';
+  submitError.innerHTML='Please fix error to submit';
+  setTimeout(function(){submitError.style.display='none';},3000);
+  return false;
+}
 }
