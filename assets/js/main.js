@@ -251,16 +251,16 @@ function validateName(){
   var name=document.getElementById('name').value
 
   if(name.length == 0){
-    nameError.innerHTML="Fullname is required"
+    nameError.innerHTML="Name is required"
     return false;
   }
   if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-    nameError.innerHTML="Enter fullname"
+    nameError.innerHTML="Enter your name"
     return false
   }
   
   if(name==' '){
-    nameError.innerHTML="Fullname is required"
+    nameError.innerHTML="Name is required"
     return false;
   }
   nameError.innerHTML=" "
@@ -299,25 +299,25 @@ function validateEmail(){
   emailError.innerHTML= ' '
   return true
 }
-function validateMessage(){
-  var message=document.getElementById('message').value
-  var required=10;
+// function validateMessage(){
+//   var message=document.getElementById('message').value
+//   var required=10;
 
-  if(message.length<required)
-  {
-    messageError.innerHTML="Enter atleast 10 characters"
-    return false
-  }
+//   if(message.length==0)
+//   {
+//     messageError.innerHTML="Mea"
+//     return false
+//   }
   
-  messageError.innerHTML= ' '
-  return true
+//   messageError.innerHTML= ' '
+//   return true
 
-}
+// }
 
 function validateForm(){
 if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
   submitError.style.display='block';
-  submitError.innerHTML=' ';
+  submitError.innerHTML='Please fix errors';
   setTimeout(function(){submitError.style.display='none';},3000);
   return false;
 }
